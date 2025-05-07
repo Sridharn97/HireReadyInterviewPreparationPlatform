@@ -1,0 +1,104 @@
+.quiz-question {
+  background-color: white;
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-6);
+}
+
+.question-number {
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-lg);
+}
+
+.question-text {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-4);
+  font-weight: 500;
+}
+
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-gray-300);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.option:hover:not(.correct):not(.incorrect) {
+  border-color: var(--color-primary);
+  background-color: var(--color-gray-50);
+}
+
+.option.selected {
+  border-color: var(--color-primary);
+  background-color: rgba(37, 99, 235, 0.1);
+}
+
+.option.correct {
+  border-color: var(--color-success);
+  background-color: rgba(34, 197, 94, 0.1);
+}
+
+.option.incorrect {
+  border-color: var(--color-error);
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.option-selector {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--color-gray-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--space-3);
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.option.selected .option-selector {
+  border-color: var(--color-primary);
+}
+
+.option.correct .option-selector {
+  border-color: var(--color-success);
+  background-color: var(--color-success);
+}
+
+.option.incorrect .option-selector {
+  border-color: var(--color-error);
+  background-color: var(--color-error);
+}
+
+.option-selector-inner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+}
+
+.option-text {
+  font-size: var(--font-size-md);
+}
+
+.option.correct .option-text {
+  color: var(--color-success);
+  font-weight: 500;
+}
+
+.option.incorrect .option-text {
+  color: var(--color-error);
+  text-decoration: line-through;
+  opacity: 0.8;
+}

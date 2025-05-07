@@ -1,0 +1,17 @@
+.material-form {
+  background-color: white;
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-md);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-6);
+}
+
+.content-editor {
+  font-family: var(--font-family);
+  min-height: 200px;
+}
