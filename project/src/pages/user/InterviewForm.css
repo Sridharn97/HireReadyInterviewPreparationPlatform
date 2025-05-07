@@ -1,59 +1,115 @@
 .interview-form-page {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: var(--space-6);
+  padding: var(--space-8) var(--space-6);
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .interview-form-header {
   display: flex;
   align-items: center;
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-8);
+  position: relative;
 }
 
 .interview-form-header h1 {
   margin: 0 auto;
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--color-gray-900);
+  text-align: center;
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding: 0 var(--space-12);
 }
 
 .back-button {
   display: flex;
   align-items: center;
   gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-700);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  position: absolute;
+  left: 0;
+}
+
+.back-button:hover {
+  background-color: var(--color-gray-200);
+  transform: translateX(-2px);
+}
+
+.back-button:active {
+  transform: translateX(0);
+}
+
+.back-button svg {
+  transition: transform var(--transition-fast);
+}
+
+.back-button:hover svg {
+  transform: translateX(-3px);
 }
 
 .interview-form {
   background-color: white;
-  padding: var(--space-6);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-gray-200);
+  transition: box-shadow 0.3s ease;
+}
+
+.interview-form:hover {
+  box-shadow: var(--shadow-xl);
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-4);
+  gap: var(--space-6);
+  margin-bottom: var(--space-4);
 }
 
 .form-group {
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-6);
+  position: relative;
 }
 
 .form-group label {
   display: block;
   margin-bottom: var(--space-2);
-  font-weight: 500;
-  color: var(--color-gray-700);
+  font-weight: 600;
+  color: var(--color-gray-800);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group .input-container {
+  position: relative;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: var(--space-3);
+  padding: var(--space-3) var(--space-4);
   border: 1px solid var(--color-gray-300);
   border-radius: var(--radius-md);
   font-size: var(--font-size-md);
-  transition: border-color var(--transition-fast);
+  transition: all var(--transition-fast);
+  background-color: var(--color-gray-50);
 }
 
 .form-group input:focus,
@@ -61,27 +117,177 @@
 .form-group textarea:focus {
   outline: none;
   border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+  background-color: white;
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+  border-color: var(--color-gray-400);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-group .input-icon {
+  position: absolute;
+  right: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-gray-400);
 }
 
 .form-actions {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.form-actions .secondary-actions {
+  display: flex;
   gap: var(--space-3);
-  margin-top: var(--space-6);
+}
+
+.btn {
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: var(--font-size-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-800);
+  border: 1px solid var(--color-gray-300);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-gray-200);
+  transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* Validation styles */
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+  border-color: var(--color-error);
+}
+
+.error-message {
+  color: var(--color-error);
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-2);
+  display: block;
+}
+
+/* Floating label variant (optional) */
+.form-group.floating-label {
+  padding-top: var(--space-4);
+}
+
+.form-group.floating-label label {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  margin-bottom: 0;
+  transition: all var(--transition-fast);
+  pointer-events: none;
+  background-color: white;
+  padding: 0 var(--space-2);
+}
+
+.form-group.floating-label input:focus + label,
+.form-group.floating-label input:not(:placeholder-shown) + label,
+.form-group.floating-label select:focus + label,
+.form-group.floating-label select:not([value=""]) + label {
+  top: 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-primary);
 }
 
 @media (max-width: 768px) {
   .form-row {
     grid-template-columns: 1fr;
+    gap: var(--space-4);
   }
   
   .interview-form-header {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-4);
+    margin-bottom: var(--space-6);
   }
   
   .interview-form-header h1 {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+    font-size: var(--font-size-2xl);
+  }
+  
+  .back-button {
+    position: relative;
+    margin-bottom: var(--space-4);
+  }
+  
+  .interview-form {
+    padding: var(--space-6) var(--space-4);
+  }
+  
+  .form-actions {
+    flex-direction: column-reverse;
+    gap: var(--space-3);
+  }
+  
+  .form-actions .secondary-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .interview-form-page {
+    padding: var(--space-4) var(--space-3);
+  }
+  
+  .interview-form {
+    padding: var(--space-4) var(--space-3);
   }
 }
