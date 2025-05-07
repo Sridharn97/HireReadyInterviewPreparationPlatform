@@ -157,7 +157,6 @@ export const DataProvider = ({ children }) => {
     return quizzes.find(quiz => quiz.id === quizId);
   };
 
-  // Quiz Results
   const addQuizResult = async (result) => {
     try {
       const res = await fetch(`${API_BASE_URL}/quizResults`, {
