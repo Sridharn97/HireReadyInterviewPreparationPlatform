@@ -41,9 +41,9 @@ const Login = () => {
         <div className="login-header">
           <div className="login-logo">
             <BookOpen size={32} />
-            <h1>LearnHub</h1>
+            <h1>HireReady</h1>
           </div>
-          <p className="login-subtitle">Your learning journey starts here</p>
+          <p className="login-subtitle">Your Interview Preparation Starts Here</p>
         </div>
         
         <form className="login-form" onSubmit={handleSubmit}>

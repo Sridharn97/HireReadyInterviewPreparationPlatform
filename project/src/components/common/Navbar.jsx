@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="container navbar-container">
         <Link to="/" className="navbar-logo">
           <BookOpen size={24} />
-          <span>LearnHub</span>
+          <span>HireReady</span>
         </Link>
         
         {user ? (
