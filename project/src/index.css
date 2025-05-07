@@ -38,22 +38,21 @@
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     
     --transition-fast: 0.15s ease;
+        /* Add these to your existing variables */
+        --space-10: 2.5rem;
+    
+        --font-size-4xl: 2.25rem;
+        
+        --radius-xl: 0.75rem;
+        
+        --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        
+        --color-accent: #8b5cf6;
+        --color-secondary: #10b981;
+        
+        /* For gradient effects */
+        --color-primary-dark: #2563eb;
+        --color-primary-rgb: 59, 130, 246;
   }
-  :root {
-    /* Add these to your existing variables */
-    --space-10: 2.5rem;
-    
-    --font-size-4xl: 2.25rem;
-    
-    --radius-xl: 0.75rem;
-    
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    
-    --color-accent: #8b5cf6;
-    --color-secondary: #10b981;
-    
-    /* For gradient effects */
-    --color-primary-dark: #2563eb;
-    --color-primary-rgb: 59, 130, 246;
-  }
+ 
