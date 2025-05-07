@@ -23,24 +23,29 @@ const Navbar = () => {
         </Link>
         
         {user ? (
-          <div className="navbar-user">
-            <span className="navbar-username">
-              {user.role === 'admin' ? 'Admin: ' : ''}{user.username}
-            </span>
-            <Button 
-              variant="ghost" 
-              size="small" 
-              onClick={handleLogout}
-              className="navbar-logout"
-            >
-              <LogOut size={16} />
-              <span>Logout</span>
-            </Button>
-          </div>
+          <>
+            <div className="navbar-menu">
+              <Link to="/interviews" className="navbar-link">Interview</Link>
+            </div>
+            <div className="navbar-user">
+              <span className="navbar-username">
+                {user.role === 'admin' ? 'Admin: ' : ''}{user.username}
+              </span>
+              <Button 
+                variant="ghost" 
+                size="small" 
+                onClick={handleLogout}
+                className="navbar-logout"
+              >
+                <LogOut size={16} />
+                <span>Logout</span>
+              </Button>
+            </div>
+          </>
         ) : (
           <div className="navbar-actions">
             <Link to="/login">
-              <Button variant="ghost" size="small">Login</Button>
+              <Button variant="ghost" size="small"></Button>
             </Link>
           </div>
         )}
